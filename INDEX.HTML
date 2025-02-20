@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rinkul</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color:#FFAB5B;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: blue;
+
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form onsubmit="return checkLogin(event)">
+            <input type="text" id="username" placeholder="Username" autocomplete="off">
+       
+             <label for="password">Password:</label>
+    <input type="password" id="password" name="password" autocomplete="off">
+            <button type="submit">Login</button>
+            <p class="error" id="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        function checkLogin(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Set your username and password
+            const correctUsername = "Rinkul";
+            const correctPassword = "12345"; // Change this to your password
+
+            // Get user input
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            // Check credentials
+            if (username === correctUsername && password === correctPassword) {
+                alert("Login successful!");
+                window.location.href = "welcomepage.html"; // Redirect to another page
+            } else {
+                errorMessage.textContent = "Invalid username or password!";
+            }
+        }
+    </script>
+</body>
+</html>

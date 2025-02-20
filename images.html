@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+
+    <!-- CSS Styling -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #333;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+          /* Lightbox (Fullscreen Image View) */
+          .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            text-decoration: none;
+            font-weight: bold;}
+            
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="HOME.HTML"><i class="fa-solid fa-house"></i> Home</a>
+      
+       
+    </div>
+
+    <!-- Gallery Section -->
+    <h1 style="margin-top: 20px;">Photo Gallery</h1>
+    <p>Click on an image to view in full size</p>
+
+    <div class="gallery">
+        <img src="image.png"Photo 1">
+        <img src="2i.jpg"Photo 2">
+        <img src="1131.jpg"Photo 3">
+        <img src="1718112389090.jpg
+        " alt="Photo 4">
+        <img src="https://source.unsplash.com/300x200/?forest,green" alt="Photo 5">
+        <img src="https://source.unsplash.com/300x200/?architecture,building" alt="Photo 6">
+    </div>
+
+     <!-- Lightbox (Fullscreen Image View) -->
+     <div id="img1" class="lightbox">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="image.png">
+    </div>
+
+    <div id="img2" class="lightbox">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="2i.jpg">
+    </div>
+
+    <div id="img3" class="lightbox">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="1718112389090.jpg">
+    </div>
+
+    <div id="img4" class="lightbox">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="12.jpg">
+    </div>
+
+    <div id="img5" class="lightbox">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="rinkul.jpg">
+    </div>
+
+    <div id="img6" class="lightbox">
+        <a href="#" class="close-btn">&times;</a>
+        <img src="images/image6.jpg">
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 My Gallery | All Rights Reserved
+    </div>
+
+</body>
+</html>
